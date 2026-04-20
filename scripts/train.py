@@ -11,5 +11,5 @@ y = df["Engine Condition"]
 model = XGBClassifier()
 model.fit(X, y)
 
-joblib.dump(model, "model/predictive-maintenance_model.pkl")
+joblib.dump(model, "model/model.joblib")
 

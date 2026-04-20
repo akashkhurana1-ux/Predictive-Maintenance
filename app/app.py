@@ -2,7 +2,7 @@ import streamlit as st
 import joblib
 import pandas as pd
 
-model = joblib.load("../model/model.pkl")
+model = joblib.load("../model/model.joblib")
 
 st.title("Engine Failure Prediction")
 
