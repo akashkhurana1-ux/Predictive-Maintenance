@@ -18,4 +18,4 @@ jobs:
     - run: pip install -r app/requirements.txt
 
     - run: python scripts/train.py
-    - run: python scripts/Update model_upload_hf.py
+    - run: python scripts/model_upload_hf.py
