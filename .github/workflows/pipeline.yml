@@ -18,4 +18,11 @@ jobs:
     - run: pip install -r app/requirements.txt
 
     - run: python scripts/train.py
+
+    - name: Login to Hugging Face
+      run: |
+        python -c "from huggingface_hub import login; import os; login(os.environ['HF_TOKEN'])"
+      env:
+        HF_TOKEN: ${{ secrets.HF_TOKEN }}
+  
     - run: python scripts/model_upload_hf.py
