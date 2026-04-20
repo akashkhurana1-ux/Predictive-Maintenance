@@ -5,8 +5,8 @@ import joblib
 
 df = pd.read_csv("data/train.csv")
 
-X = df.drop("Engine_Condition", axis=1)
-y = df["Engine_Condition"]
+X = df.drop("Engine Condition", axis=1)
+y = df["Engine Condition"]
 
 model = XGBClassifier()
 model.fit(X, y)
