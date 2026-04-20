@@ -21,12 +21,13 @@ jobs:
 
     - name: Debug token presence
       run: |
-      if [ -z "$HF_TOKEN" ]; then
-        echo "HF_TOKEN is EMPTY ❌"
-        exit 1
-      else
-        echo "HF_TOKEN is present ✅"
-      fi
+        if [ -z "$HF_TOKEN" ]; then
+          echo "HF_TOKEN is EMPTY ❌"
+          exit 1
+        else
+          echo "HF_TOKEN is present ✅"
+        fi
+      
       env:
         HF_TOKEN: ${{ secrets.HF_TOKEN }}
         
