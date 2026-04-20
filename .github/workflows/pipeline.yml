@@ -19,6 +19,17 @@ jobs:
 
     - run: python scripts/train.py
 
+    - name: Debug token presence
+      run: |
+      if [ -z "$HF_TOKEN" ]; then
+        echo "HF_TOKEN is EMPTY ❌"
+        exit 1
+      else
+        echo "HF_TOKEN is present ✅"
+      fi
+      env:
+        HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        
     - name: Login to Hugging Face
       run: |
         python -c "from huggingface_hub import login; import os; login(os.environ['HF_TOKEN'])"
